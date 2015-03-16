@@ -1,5 +1,7 @@
 # encoding: utf-8
 #
+require 'flipper'
+
 module Flipper
   module Echo
     # Encapsulates relevant information about a Flipper adapter event
@@ -11,7 +13,7 @@ module Flipper
       #
       # @param feature [Flipper::Feature] the feature that was changed
       # @param action [Symbol] the action
-      #   (`:enable`, `:disable`, `:remove` or `:clear`)
+      #   (`:enabled`, `:disabled`, `:removed` or `:cleared`)
       # @param options [optional, Hash] hash of options
       #
       # @option options [Flipper::Type] :target the event target
@@ -68,10 +70,14 @@ module Flipper
       # Passes this event to the configured notifier
       #
       def notify
-        if notifier.is_a?(Proc)
-          notifier.call(self)
-        elsif notifier.respond_to?(:notify)
-          notifier.notify(self)
+        notifiers.each do |notifier|
+          method = if notifier.is_a?(Proc)
+                     :call
+                   elsif notifier.respond_to?(:notify)
+                     :notify
+                   end
+
+          notifier.send(method, self) if method
         end
       end
 
@@ -93,8 +99,8 @@ module Flipper
 
       private
 
-      def notifier
-        Flipper::Echo.configuration.notifier
+      def notifiers
+        Flipper::Echo.configuration.notifiers
       end
     end
   end

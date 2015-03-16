@@ -123,7 +123,7 @@ describe Flipper::Echo::Event do
       it 'calls proc' do
         procedure = proc {}
 
-        allow(event).to receive(:notifier).and_return(procedure)
+        allow(event).to receive(:notifiers).and_return([procedure])
 
         expect(procedure).to receive(:call)
 
@@ -137,7 +137,7 @@ describe Flipper::Echo::Event do
       end
 
       it 'calls instance method if it exists' do
-        allow(event).to receive(:notifier).and_return(notifier)
+        allow(event).to receive(:notifiers).and_return([notifier])
 
         expect(notifier).to receive(:notify)
 
@@ -160,18 +160,18 @@ describe Flipper::Echo::Event do
     end
   end
 
-  describe '#notifier' do
+  describe '#notifiers' do
     let :notifier do
       double(:notifier)
     end
 
     it 'returns notifier from config' do
       allow(Flipper::Echo.configuration).to(
-        receive(:notifier).and_return(notifier))
+        receive(:notifiers).and_return([notifier]))
 
       event = Flipper::Echo::Event.new(feature, action)
 
-      expect(event.send(:notifier)).to eq(notifier)
+      expect(event.send(:notifiers)).to eq([notifier])
     end
   end
 end

@@ -2,6 +2,8 @@
 #
 require 'flipper/echo/configuration'
 require 'flipper/echo/event'
+require 'flipper/echo/slack'
+require 'flipper/echo/stdout'
 require 'flipper/echo/version'
 
 # Flipper namespace
@@ -32,7 +34,7 @@ module Flipper
       def enable(feature, gate, target)
         super.tap do
           Flipper::Echo::Event.new(
-            feature, :enable, gate: gate, target: target).notify
+            feature, :enabled, gate: gate, target: target).notify
         end
       end
 
@@ -41,20 +43,20 @@ module Flipper
       def disable(feature, gate, target)
         super.tap do
           Flipper::Echo::Event.new(
-            feature, :disable, gate: gate, target: target).notify
+            feature, :disabled, gate: gate, target: target).notify
         end
       end
 
       # Notify adapter remove events
       #
       def remove(feature)
-        super.tap { Flipper::Echo::Event.new(feature, :remove).notify }
+        super.tap { Flipper::Echo::Event.new(feature, :removed).notify }
       end
 
       # Notify adapter clear events
       #
       def clear(feature)
-        super.tap { Flipper::Echo::Event.new(feature, :clear).notify }
+        super.tap { Flipper::Echo::Event.new(feature, :cleared).notify }
       end
     end
   end

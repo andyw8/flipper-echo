@@ -30,4 +30,16 @@ describe Flipper::Echo::Configuration do
       configuration.flipper = flipper
     end
   end
+
+  describe '#notifier=' do
+    it 'appends notifier' do
+      notifier = double(:notifier)
+
+      expect(configuration.notifiers).to eq([])
+
+      configuration.notifier = notifier
+
+      expect(configuration.notifiers).to eq([notifier])
+    end
+  end
 end

@@ -10,7 +10,33 @@ module Flipper
     # intended behavior.
     #
     class Configuration
-      attr_accessor :notifier
+      # All configured notifiers
+      #
+      # @return [Array]
+      #
+      def notifiers
+        @notifiers ||= []
+      end
+
+      # Convenience method for assigning a single notifier
+      #
+      # @return [Array] all notifiers
+      #
+      def notifier=(notifier)
+        notifiers << notifier
+      end
+
+      # Optional environment name
+      #
+      attr_writer :environment
+
+      # Configured environment name
+      #
+      # @return [String]
+      #
+      def environment
+        @environment ||= ENV['FLIPPER_ECHO_ENVIRONMENT']
+      end
 
       # Assign Flipper instance
       #

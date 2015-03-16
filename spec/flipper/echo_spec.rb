@@ -43,7 +43,7 @@ describe Flipper::Echo do
     describe '#enable' do
       it 'enables feature' do
         expect_any_instance_of(Flipper::Echo::Event).to receive(:notify) do |e|
-          expect(e.action).to eq(:enable)
+          expect(e.action).to eq(:enabled)
         end
 
         adapter.enable(feature, gate, target)
@@ -53,7 +53,7 @@ describe Flipper::Echo do
     describe '#disable' do
       it 'disables feature' do
         expect_any_instance_of(Flipper::Echo::Event).to receive(:notify) do |e|
-          expect(e.action).to eq(:disable)
+          expect(e.action).to eq(:disabled)
         end
 
         adapter.disable(feature, gate, target)
@@ -63,7 +63,7 @@ describe Flipper::Echo do
     describe '#remove' do
       it 'removes feature' do
         expect_any_instance_of(Flipper::Echo::Event).to receive(:notify) do |e|
-          expect(e.action).to eq(:remove)
+          expect(e.action).to eq(:removed)
         end
 
         adapter.remove(feature)
@@ -73,7 +73,7 @@ describe Flipper::Echo do
     describe '#clear' do
       it 'clears feature' do
         expect_any_instance_of(Flipper::Echo::Event).to receive(:notify) do |e|
-          expect(e.action).to eq(:clear)
+          expect(e.action).to eq(:cleared)
         end
 
         adapter.clear(feature)
