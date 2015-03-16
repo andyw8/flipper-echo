@@ -55,7 +55,7 @@ module Flipper
       # @return [Class] the adapter singleton class
       #
       def adapter=(adapter)
-        adapter.singleton_class.include Flipper::Echo::InstanceMethods
+        adapter.singleton_class.send :include, Flipper::Echo::InstanceMethods
       end
     end
   end

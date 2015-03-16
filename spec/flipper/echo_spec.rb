@@ -24,7 +24,7 @@ describe Flipper::Echo do
   describe Flipper::Echo::InstanceMethods do
     let :adapter do
       adapter_class.new.tap do |inst|
-        inst.singleton_class.include Flipper::Echo::InstanceMethods
+        inst.singleton_class.send :include, Flipper::Echo::InstanceMethods
       end
     end
 

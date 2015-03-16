@@ -1,6 +1,7 @@
 # Flipper::Echo
 
 [![Gem Version](https://badge.fury.io/rb/flipper-echo.svg)](http://badge.fury.io/rb/flipper-echo)
+[![Code Climate](https://codeclimate.com/github/mode/flipper-echo/badges/gpa.svg)](https://codeclimate.com/github/mode/flipper-echo)
 
 This gem adds a simple callback interface for
 [Flipper](https://github.com/jnunemaker/flipper) adapter events.
