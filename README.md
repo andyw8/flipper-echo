@@ -1,5 +1,6 @@
 # Flipper::Echo
 
+[![Build Status](https://travis-ci.org/mode/flipper-echo.svg?branch=master)](https://travis-ci.org/mode/flipper-echo)
 [![Gem Version](https://badge.fury.io/rb/flipper-echo.svg)](http://badge.fury.io/rb/flipper-echo)
 [![Code Climate](https://codeclimate.com/github/mode/flipper-echo/badges/gpa.svg)](https://codeclimate.com/github/mode/flipper-echo)
 
