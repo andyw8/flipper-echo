@@ -28,8 +28,8 @@ describe Flipper::Echo::Event do
     Flipper::Types::PercentageOfActors.new(nil)
   end
 
-  let :percentage_of_random do
-    Flipper::Types::PercentageOfRandom.new(nil)
+  let :percentage_of_time do
+    Flipper::Types::PercentageOfTime.new(nil)
   end
 
   describe '#boolean' do
@@ -89,18 +89,18 @@ describe Flipper::Echo::Event do
     end
   end
 
-  describe '#percentage_of_random' do
+  describe '#percentage_of_time' do
     it 'returns nil if target type does not match' do
       event = Flipper::Echo::Event.new(feature, action, target: boolean)
 
-      expect(event.percentage_of_random).to eq(nil)
+      expect(event.percentage_of_time).to eq(nil)
     end
 
     it 'returns target if target type matches' do
       event = Flipper::Echo::Event.new(
-        feature, action, target: percentage_of_random)
+        feature, action, target: percentage_of_time)
 
-      expect(event.percentage_of_random).to eq(percentage_of_random)
+      expect(event.percentage_of_time).to eq(percentage_of_time)
     end
   end
 

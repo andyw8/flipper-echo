@@ -59,12 +59,12 @@ module Flipper
         target if target.is_a?(Flipper::Types::PercentageOfActors)
       end
 
-      # Percentage of random target
+      # Percentage of time target
       #
-      # @return [Flipper::Types::PercentageOfRandom, nil]
+      # @return [Flipper::Types::PercentageOfTime, nil]
       #
-      def percentage_of_random
-        target if target.is_a?(Flipper::Types::PercentageOfRandom)
+      def percentage_of_time
+        target if target.is_a?(Flipper::Types::PercentageOfTime)
       end
 
       # Passes this event to the configured notifier

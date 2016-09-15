@@ -42,11 +42,11 @@ describe Flipper::Echo::Stdout::Notifier do
       expect(notifier.send(:target_message, event)).to eq('15% of actors')
     end
 
-    it 'builds percentage of random message' do
+    it 'builds percentage of time message' do
       allow(event).to(
-        receive(:percentage_of_random).and_return(double(:random, value: 15)))
+        receive(:percentage_of_time).and_return(double(:time, value: 15)))
 
-      expect(notifier.send(:target_message, event)).to eq('15% of random')
+      expect(notifier.send(:target_message, event)).to eq('15% of time')
     end
   end
 end

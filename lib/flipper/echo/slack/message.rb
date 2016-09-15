@@ -46,8 +46,8 @@ module Flipper
             "for actor `#{event.actor.flipper_id}`"
           elsif event.percentage_of_actors
             "for #{event.percentage_of_actors.value}% of actors"
-          elsif event.percentage_of_random
-            "for #{event.percentage_of_random.value}% of random"
+          elsif event.percentage_of_time
+            "for #{event.percentage_of_time.value}% of time"
           end
         end
 
