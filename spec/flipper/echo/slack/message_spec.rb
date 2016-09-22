@@ -58,14 +58,14 @@ describe Flipper::Echo::Slack::Message do
       expect(message.send(:filters)).to eq('for 10% of actors')
     end
 
-    it 'builds percentage of random string' do
+    it 'builds percentage of time string' do
       event   = Flipper::Echo::Event.new(feature, :disabled)
       message = Flipper::Echo::Slack::Message.new(event)
 
       percentage = double(:percentage, value: '10')
-      allow(event).to receive(:percentage_of_random).and_return(percentage)
+      allow(event).to receive(:percentage_of_time).and_return(percentage)
 
-      expect(message.send(:filters)).to eq('for 10% of random')
+      expect(message.send(:filters)).to eq('for 10% of time')
     end
   end
 
