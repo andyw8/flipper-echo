@@ -1,8 +1,16 @@
 # Flipper::Echo
 
+**Repo Status:** `Archived.`
+
+This repo was identified as an un-managed repository. As such, we have chosedn to decommission this repository to prevent the consumption of security vulnerabilities within this repository.
+
+More info can be found here: https://mode.quip.com/NwvJAwA7l4SN/August-Issue-Review-Committee-Meeting#GYBACAb6dwZ
+
 [![Build Status](https://travis-ci.org/mode/flipper-echo.svg?branch=master)](https://travis-ci.org/mode/flipper-echo)
 [![Gem Version](https://badge.fury.io/rb/flipper-echo.svg)](http://badge.fury.io/rb/flipper-echo)
 [![Code Climate](https://codeclimate.com/github/mode/flipper-echo/badges/gpa.svg)](https://codeclimate.com/github/mode/flipper-echo)
+
+# Description
 
 This gem adds a simple callback interface for
 [Flipper](https://github.com/jnunemaker/flipper) adapter events.
