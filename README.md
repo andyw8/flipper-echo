@@ -1,6 +1,6 @@
 # Flipper::Echo
 
-**Repo Status:** Archived.
+**Repo Status:** `Archived.`
 
 This repo was identified as an un-managed repository. As such, we have chosedn to decommission this repository to prevent the consumption of security vulnerabilities within this repository.
 
