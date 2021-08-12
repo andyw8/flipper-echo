@@ -10,6 +10,8 @@ More info can be found here: https://mode.quip.com/NwvJAwA7l4SN/August-Issue-Rev
 [![Gem Version](https://badge.fury.io/rb/flipper-echo.svg)](http://badge.fury.io/rb/flipper-echo)
 [![Code Climate](https://codeclimate.com/github/mode/flipper-echo/badges/gpa.svg)](https://codeclimate.com/github/mode/flipper-echo)
 
+# Description
+
 This gem adds a simple callback interface for
 [Flipper](https://github.com/jnunemaker/flipper) adapter events.
 
