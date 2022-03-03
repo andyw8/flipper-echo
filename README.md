@@ -1,6 +1,6 @@
 # Flipper::Echo
 
-This is a fork of the deleted repo previously at https://github.com/andyw8/flipper-echo
+This is a fork of the deleted repo previously at https://github.com/mode/flipper-echo
 
 # Description
 
